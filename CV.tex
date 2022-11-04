@@ -9,6 +9,10 @@
 %\usepackage[T1]{fontenc}
 %\usepackage{helvet}
 
+\usepackage[dvipsnames]{xcolor}
+%\colorlet{LightRubineRed}{00F9DE}
+\definecolor{BackgroundColor}{HTML}{fffff0}
+
 \usepackage{geometry}
 \geometry{
 top=5mm,
@@ -63,7 +67,6 @@ bottom=5mm,
 {1mm}
 
 \usepackage{hyperref}
-
 \hypersetup{
 colorlinks=true,
 linkcolor=blue,
@@ -79,8 +82,14 @@ pdftitle={Mislav Jaksic CV},
 {\textbf{#1} \texorpdfstring{\hfill}{} \textit{#2}}
 
 
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+
 
 \begin{document}
+\pagecolor{BackgroundColor}
 
 \begin{multicols}{3}
 
@@ -120,12 +129,15 @@ Phone: on request
 
 
 \section{Work experience}
+%\subsection{\bolditalicpair{Founder, Webway}{07/2022 - Present}}
+%\hfill
+
 \subsection{\bolditalicpair{Data Engineering Consultant, Raiffeisenbank}{09/2021 - Present}}
 
 \begin{itemize}
- \item Developed the data architecture and provided data for a team of 11 from five sources using NiFi and SQL
- \item Orchestrated daily production data ingestion using Airflow
- \item[$\Rrightarrow$] SQL, NiFi, Airflow
+ \item Published documentation nobody else wanted to write that reduced the number of meetings a team of 20 had to have
+ \item Synced 120 financial data tables/pipelines across SIT, UAT and PROD environments without CICD because the country had to switch currencies before CICD could be developed
+ \item Unified exposure, letter of credit, limit, frame, account and contract data that allowed a risk rule engine to determine if a micro or small client can borrow money
 \end{itemize}
 
 \subsection{\bolditalicpair{Technical Lead, DataFlux GmbH}{06/2019 - 09/2021}}
@@ -135,15 +147,15 @@ Phone: on request
  \item Made a Kafka Streams unit test framework that simulates event time locally that increased development speed
  \item Integrated a six project network analysis system using customer's custom framework
  \item Set up hiring, mentoring and knowledge retention processes that prevented six projects from being abandoned
- \item[$\Rrightarrow$] Kubernetes, Helm, Kafka, Kafka Streams, Prometheus, Grafana, Jaeger, Argo CICD
+% \item[$\Rrightarrow$] Kubernetes, Helm, Kafka, Kafka Streams, Prometheus, Grafana, Jaeger, Argo CICD
 \end{itemize}
 
 \subsection{\bolditalicpair{Software Engineer, DataFlux GmbH}{02/2019 - 05/2019}}
 
 \begin{itemize}
   \item Constructed an Apache Kafka Broker plugin that pushed or pulled its metrics to a remote data store
-  \item Wrote a RESTful Kafka cluster, partition and consumer group inspector that reduced maintenance time by 30\%
-  \item[$\Rrightarrow$] Kafka, ZooKeeper, Spring, JMX, Git, Linux, Shell Scripting
+  \item Wrote a RESTful Kafka cluster, partition and consumer group inspector that reduced cluster maintenance time
+%  \item[$\Rrightarrow$] Kafka, ZooKeeper, Spring, JMX, Git, Linux, Shell Scripting
 \end{itemize}
 
 % \subsection{\bolditalicpair{Big Data Analyst Intern, Inceptum}{07/2018 - 10/2018}}
@@ -164,17 +176,17 @@ Phone: on request
 
 
 \section{Freelance and hobby projects}
-\subsection{\bolditalicpair{Business Tax Reporter, Azelis}{07/2017 - 01/2019}}
+\subsection{\bolditalicpair{Tax Form Generator, Azelis}{07/2017 - 01/2019}}
 
 \begin{itemize}
-  \item Wrote accounting and reporting software for Dynamics AX that increased productivity by 6\%, 100h/year
-  \item[$\Rrightarrow$] Python
+  \item Wrote and integrated an accounting software for Dynamics AX that increased productivity by 6\%, 100h/year
+%  \item[$\Rrightarrow$] Python
 \end{itemize}
 
 \subsection{\bolditalicpair{Knowledge Repository}{02/2017 - Present}}
 
 \begin{itemize}
-  \item A curated collection of 150+ technical topics that increase personal productivity and knowledge retention
+  \item A curated collection of 150+ technical topics that increase personal productivity and learning speed
 \end{itemize}
 
 % \subsection{\bolditalicpair{Real estate valuation system}{Capstone project}}
@@ -203,16 +215,15 @@ Phone: on request
 \subsubsection{\bolditalicpair{Intermediate:}{}}
 
 \begin{itemize}
-  \item[$\Rrightarrow$] Docker, Helm, Kubernetes, Kafka, Kafka Streams, Grafana, Prometheus, Git
-  \item[$\Rrightarrow$] SQL, Python, Java
+  \item[$\Rrightarrow$] Helm, Kubernetes, Kafka Streams, Grafana, Prometheus, Git
+  \item[$\Rrightarrow$] Python, Java, SQL
 \end{itemize}
 
 \subsubsection{\bolditalicpair{Basic:}{}}
 
 \begin{itemize}
-  \item[$\Rrightarrow$] GraphQL, Flask, Jaeger, Ambassador, PostgreSQL
-  \item[$\Rrightarrow$] Argo CICD, Airflow, NiFi
-  \item[$\Rrightarrow$] Haskell, C++, JavaScript
+  \item[$\Rrightarrow$] Airflow, NiFi
+  \item[$\Rrightarrow$] JavaScript
 \end{itemize}
 
 
@@ -225,6 +236,6 @@ Phone: on request
   \item D\&D DM, led 11 campaigns - 10/25/40-man WoW Raid Leader - 1 of 80 EVE Online Partners
 \end{itemize}
 
-\bolditalicpair{}{Updated: 17.03.2022.}
+\bolditalicpair{}{Updated: 04.11.2022.}
 
 \end{document}
